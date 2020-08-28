@@ -10,7 +10,7 @@ import { createLogger } from '../../utils/logger'
 const logger = createLogger('getAllTodos')
 export const handler = middy(
   async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
-    // TODO: Get all TODO items for a current user
+    // Gets all TODO items for a current user
     try {
       const jwtToken = getToken(event.headers.Authorization)
       const result = await getAllTodos(jwtToken)

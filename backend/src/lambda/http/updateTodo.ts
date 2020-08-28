@@ -15,7 +15,7 @@ export const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGat
   const todoId = event.pathParameters.todoId
   const updatedTodo: UpdateTodoRequest = JSON.parse(event.body)
 
-  // TODO: Update a TODO item with the provided id using values in the "updatedTodo" object
+  //Updates a TODO item with the provided id using values in the "updatedTodo" object
   try {
     const jwtToken = getToken(event.headers.Authorization)
     const updatedItem = await updateTodoItem(updatedTodo, todoId, jwtToken)
